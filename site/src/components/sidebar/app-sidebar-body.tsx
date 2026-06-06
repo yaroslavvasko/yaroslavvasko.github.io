@@ -14,7 +14,12 @@ export function AppSidebarBody({
       <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
         {isMobile && <SidebarTrigger />}
       </header>
-      <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
+
+      <div className="grid grid-cols-12 p-4 sm:p-6 lg:p-8">
+        <section className="col-span-12 lg:col-span-10 lg:col-start-2">
+          {children}
+        </section>
+      </div>
     </SidebarInset>
   );
 }
