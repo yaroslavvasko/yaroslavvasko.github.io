@@ -15,11 +15,7 @@ export function AppSidebarBody({
         {isMobile && <SidebarTrigger />}
       </header>
 
-      <div className="grid grid-cols-12 p-4 sm:p-6 lg:p-8">
-        <section className="col-span-12 lg:col-span-10 lg:col-start-2">
-          {children}
-        </section>
-      </div>
+      <section className="flex z-1 p-4 sm:p-6 lg:p-8">{children}</section>
     </SidebarInset>
   );
 }

@@ -1,0 +1,26 @@
+.cyber-card:before {
+  top: 0;
+  left: 0;
+
+  border: 2px solid var(--primary);
+  border-bottom: none;
+  border-right: none;
+}
+
+.cyber-card:after {
+  right: 0;
+  bottom: 0;
+
+  border: 2px solid var(--primary);
+  border-top: none;
+  border-left: none;
+}
+
+.cyber-card:before,
+.cyber-card:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}

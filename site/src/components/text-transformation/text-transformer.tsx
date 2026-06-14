@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const DEFAULT_SPECIALS = "#&*@!%$?~^+-=<>";
+const DEFAULT_SPECIALS = "#&*@!%$?~^+-=<>¡™£¢∞§¶•ªº–≠åß∂ƒ©˙∆˚¬…æ≈ç√∫˜µ≤≥÷/?";
 
 export type TextTransformerProps = {
   sentences?: string[];
@@ -26,7 +26,7 @@ export type TextTransformerProps = {
 export default function TextTransformer({
   sentences = [],
   specials = DEFAULT_SPECIALS,
-  speed = 120,
+  speed = 60,
   pauseMs = 2000,
   loop = true,
   className = "",
