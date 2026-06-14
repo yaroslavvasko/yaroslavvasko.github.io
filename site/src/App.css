@@ -24,3 +24,17 @@
   height: 30px;
   pointer-events: none;
 }
+.cyber-card {
+  cursor: pointer;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cyber-card:hover {
+  box-shadow:
+    inset 0 0 30px color-mix(in srgb, var(--primary) 10%, transparent),
+    0 0 30px color-mix(in srgb, var(--primary) 30%, transparent);
+  transform: translateY(-2px);
+  clip-path: polygon(0 0, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}

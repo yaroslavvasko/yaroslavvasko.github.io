@@ -1,0 +1,54 @@
+{
+  "description": [
+    "Hey, I'm Yaroslav- a Senior .NET Engineer based in Kraków, Poland, with 7+ years of experience building cloud-native applications and distributed systems. I've worked across sustainability, fintech, insurance, and enterprise software, mostly around C#, .NET Core, and Azure — enjoying the full journey from whiteboarding architecture to shipping clean, well-tested code.",
+    "Lately I've been taking an active role in supporting engineering leadership - driving delivery ceremonies, shaping team processes, and keeping communication flowing between developers and business stakeholders. I naturally gravitate toward making sure the team has clarity and momentum to do their best work.",
+    "Outside of work, I stay active through football, cycling, and swimming, and love travelling whenever I get the chance. A fresh perspective away from the keyboard tends to make you a better engineer anyway."
+  ],
+  "location": "Kraków, Poland",
+  "certifications": [
+    {
+      "name": "Azure Developer Associate",
+      "issuer": "Microsoft"
+    }
+  ],
+  "experience": [
+    {
+      "company": "MEDIUS POLAND",
+      "role": "Software Engineer",
+      "duration": "2025 - present",
+      "description": "Actively contributed to the execution of a large-scale technical migration for a modular monolith platform. Designed and delivered new product features within a modular monolith architecture, ensuring long-term maintainability and extensibility"
+    },
+    {
+      "company": "PRAGMILE",
+      "role": "Full-stack .Net Developer",
+      "duration": "2022 - 2025",
+      "description": "Design and delivery of new capabilities across microservice-based applications. Contributed to the migration of legacy systems to Azure cloud infrastructure. Played a key role in establishing engineering processes for a newly formed team, including structured code review standards, standup routines, and delivery ceremonies."
+    },
+    {
+      "company": "AVANADE POLAND",
+      "role": "Full-stack Developer",
+      "duration": "2019 - 2022",
+      "description": "Design and implementation of new capabilities for application primarily using .NET and React. Involved in all stages of the software development lifecycle, from requirements gathering to deployment and maintenance."
+    },
+    {
+      "company": " LUXOFT POLAND",
+      "role": "Junior .NET Developer",
+      "duration": "2018 - 2019",
+      "description": "Contributed to enterprise software solutions for the banking industry, primarily using .NET technologies. Bug fixing and product maintenance."
+    }
+  ],
+  "education": [
+    {
+      "institution": "JAGIELLONIAN UNIVERSITY OF KRAKÓW",
+      "degree": "M.Sc. of Computer Science",
+      "duration": "2016 - 2018",
+      "description": "Specialization: Applied computer science"
+    },
+    {
+      "institution": "CATHOLIC UNIVERSITY OF LUBLIN",
+      "degree": "B.Sc. of Computer Science",
+      "duration": "2012 - 2014",
+      "description": "Specialization: Programming and data processing; Computer graphics and multimedia"
+    }
+  ]
+}
