@@ -1,0 +1,51 @@
+{
+  "description": [
+    "My professional experience spans designing, architecting, and delivering web solutions across a wide range of industries and tech stacks. I'm passionate about the real-world impact good engineering can have - whether that's a faster, more reliable system or a smoother experience for the end user.",
+    "I firmly believe that well-crafted software, backed by solid architecture and clean code, can meaningfully improve business processes and the people who depend on them."
+  ],
+  "stack": [
+    {
+      "type": "$backend_development:",
+      "skills": [
+        ".NET",
+        "C#",
+        "Web API",
+        "Entity Framework Core",
+        "NHibernate",
+        "xUnit"
+      ]
+    },
+    {
+      "type": "$frontend_development:",
+      "skills": ["React", "TypeScript", "Redux", "HTML", "CSS"]
+    },
+    {
+      "type": "$cloud_infrastructure:",
+      "skills": [
+        "Azure",
+        "App Service",
+        "System Design",
+        "Storage Accounts",
+        "Cosmos DB",
+        "Docker"
+      ]
+    },
+    {
+      "type": "$databases:",
+      "skills": ["T-SQL", "Cosmos DB"]
+    },
+    {
+      "type": "$architecture_&_practices:",
+      "skills": [
+        "Microservices",
+        "Modular Monolith",
+        "REST API Design",
+        "System Design",
+        "CI/CD",
+        "Agile/Scrum",
+        "Code Review",
+        "Unit Testing"
+      ]
+    }
+  ]
+}

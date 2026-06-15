@@ -80,9 +80,9 @@ export default function AboutPage() {
             </CardContent>
           </Card>
         </div>
-        <div className="flex flex-col md:max-w-1/2 p-6">
+        <div className="flex flex-col md:max-w-2/3 p-6">
           {data?.description.map((paragraph, index) => (
-            <p className="text-lg mt-2" key={index}>
+            <p className="text-xl mt-2" key={index}>
               {paragraph}
             </p>
           ))}
