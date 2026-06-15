@@ -38,3 +38,24 @@
   transform: translateY(-2px);
   clip-path: polygon(0 0, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
 }
+
+.cyber-card.streamline {
+  background: linear-gradient(
+    180deg,
+    transparent 0,
+    color-mix(in srgb, var(--primary) 15%, transparent) 20%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+  animation: streamline 3s linear infinite;
+}
+
+@keyframes streamline {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 200%;
+  }
+}

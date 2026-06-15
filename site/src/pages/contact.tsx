@@ -1,3 +1,61 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useJsonFetch } from "@/hooks/useJsonFetch";
+
+type ContactData = {
+  description: string[];
+  email: string;
+  social: {
+    name: string;
+    url: string;
+  }[];
+};
+
 export default function ContactPage() {
-  return <div>Contact page content</div>;
+  const { data } = useJsonFetch<ContactData>("/data/contact.json");
+
+  return (
+    <div className="flex flex-col grow">
+      <h1 className="text-6xl lg:text-8xl font-medium mt-6">
+        Contact me<span className="text-primary-2">.</span>
+      </h1>
+
+      {data?.description.map((paragraph, index) => (
+        <p className="text-3xl mt-6" key={index}>
+          {paragraph}
+        </p>
+      ))}
+
+      <div className="flex flex-col md:flex-row ">
+        <div className="flex flex-col md:flex-row gap-6 mt-6">
+          <a href={"mailto:" + data?.email}>
+            <Card className="cyber-card streamline bg-transparent backdrop-blur-xs font-mono min-w-md p-6">
+              <CardHeader>
+                <CardTitle className="font-mono font-light text-primary text-base p-6 pb-0">
+                  $email:
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-3xl p-6">{data?.email}</p>
+              </CardContent>
+            </Card>
+          </a>
+
+          {data?.social.map((social, index) => (
+            <a href={social.url}>
+              <Card
+                className="cyber-card bg-transparent backdrop-blur-xs font-mono flex-1 min-w-xs"
+                key={index}
+              >
+                <CardContent>
+                  <p className="font-mono font-light text-primary text-base">
+                    {social.name}
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }

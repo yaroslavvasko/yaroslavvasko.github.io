@@ -1,0 +1,20 @@
+{
+  "description": [
+    "Let's get in touch , for any inquires or even simply say hi!"
+  ],
+  "email": "yaroslav.vasko@gmail.com",
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/yaroslavvasko"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/yaroslav-vasko/"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/yaroslavvasko"
+    }
+  ]
+}
