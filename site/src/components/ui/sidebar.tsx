@@ -20,6 +20,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Button } from "./button";
+import { SquareMenu } from "lucide-react";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -241,23 +243,24 @@ function Sidebar({
 function SidebarTrigger({
   className,
   onClick,
+  children,
   ...props
 }: React.ComponentProps<"div">) {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <div className={cn("flex grow bg-primary p-2 ", className)}>
+    <div className={cn("flex grow bg-primary p-2 cursor-pointer", className)}>
       <div
         data-sidebar="trigger"
         data-slot="sidebar-trigger"
-        className={cn("w-8 flex-initial", className)}
+        className={cn("flex grow justify-between", className)}
         onClick={(event) => {
           onClick?.(event);
           toggleSidebar();
         }}
         {...props}
       >
-        <img style={{ filter: "invert(100%)" }} src={"/logo.png"} />
+        {children}
         <span className="sr-only">Toggle Sidebar</span>
       </div>
     </div>

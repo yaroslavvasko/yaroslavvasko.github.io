@@ -45,7 +45,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <div className="flex">{!isMobile && <SidebarTrigger />}</div>
+        <div className="flex">
+          {!isMobile && (
+            <SidebarTrigger>
+              <img
+                style={{ filter: "invert(100%)" }}
+                src={"/logo.png"}
+                className="w-8"
+              />
+            </SidebarTrigger>
+          )}
+        </div>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />

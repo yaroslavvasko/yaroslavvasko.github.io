@@ -28,14 +28,14 @@ export default function ContactPage() {
       <div className="flex flex-col md:flex-row ">
         <div className="flex flex-col md:flex-row gap-6 mt-6">
           <a href={"mailto:" + data?.email}>
-            <Card className="cyber-card streamline bg-transparent backdrop-blur-xs font-mono min-w-md p-6">
-              <CardHeader>
-                <CardTitle className="font-mono font-light text-primary text-base p-6 pb-0">
+            <Card className="cyber-card streamline bg-transparent backdrop-blur-xs font-mono min-w-sm md:min-w-md p-6">
+              <CardHeader className="px-0">
+                <CardTitle className="font-mono font-light text-primary text-base p-0 pb-0 md:p-6">
                   $email:
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-3xl p-6">{data?.email}</p>
+              <CardContent className="px-0">
+                <p className="text-xl md:text-3xl p-o md:p-6">{data?.email}</p>
               </CardContent>
             </Card>
           </a>

@@ -1,0 +1,17 @@
+{
+  "heading": ["Hello", "I am Yaroslav"],
+  "subheading": [
+    "Full Stack Web Developer focused on scalable SaaS, clean systems, and fast user experiences."
+  ],
+  "description": [
+    " Experienced in building enterprise SaaS products, with a focus on .NET, React and Azure."
+  ],
+  "mainInfo": [
+    "full stack software developer specializing in .NET, Azure, and React.",
+    "several years of enterprise experience across international projects.",
+    "turning complex business requirements into elegant, scalable solutions.",
+    "from Kraków, Poland — building software that works across borders.",
+    "may your builds always pass and your users always stay.",
+    "if this resonates — share it with someone who builds things too."
+  ]
+}
