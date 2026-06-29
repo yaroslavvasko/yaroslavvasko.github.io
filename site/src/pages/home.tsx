@@ -5,18 +5,42 @@ import { Badge } from "@/components/ui/badge";
 import { BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useJsonFetch } from "@/hooks/useJsonFetch";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import {
+  getPersonSchema,
+  getProfessionalServiceSchema,
+  getBreadcrumbSchema,
+} from "@/lib/structured-data";
 
 import "./home.css";
+import type { PageMeta } from "@/types/seo";
+import { NavigationData } from "@/nav-config";
 
-type MainData = {
+interface MainData {
   heading: string[];
   subheading: string[];
   description: string[];
   mainInfo: string[];
-};
+  metaData: PageMeta;
+}
 
 export default function HomePage() {
   const { data } = useJsonFetch<MainData>("/data/home.json");
+
+  // Set page meta and structured data
+  usePageMeta({
+    title: data?.metaData?.title || "",
+    description: data?.metaData?.description || "",
+    path: data?.metaData?.path || "",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        getPersonSchema(),
+        getProfessionalServiceSchema(),
+        getBreadcrumbSchema(NavigationData.getPageConfig("home").breadcrumbs),
+      ],
+    },
+  });
 
   return (
     <div className="squared-bg flex flex-col md:flex-row grow">

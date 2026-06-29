@@ -1,17 +1,32 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useJsonFetch } from "@/hooks/useJsonFetch";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { getBreadcrumbSchema } from "@/lib/structured-data";
+import { NavigationData } from "@/nav-config";
+import type { PageMeta } from "@/types/seo";
 
-type SkillsData = {
+interface SkillsData {
   description: string[];
   stack: {
     type: string;
     skills: string[];
   }[];
-};
+  metaData: PageMeta;
+}
 
 export default function SkillsPage() {
   const { data } = useJsonFetch<SkillsData>("/data/skills.json");
+
+  // Set page meta and structured data
+  usePageMeta({
+    title: data?.metaData?.title || "",
+    description: data?.metaData?.description || "",
+    path: data?.metaData?.path || "",
+    structuredData: getBreadcrumbSchema(
+      NavigationData.getPageConfig("skills").breadcrumbs,
+    ),
+  });
 
   return (
     <div className="flex flex-col grow p-0 md:p-6">

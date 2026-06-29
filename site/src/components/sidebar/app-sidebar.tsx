@@ -11,34 +11,8 @@ import {
   SidebarRail,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { House, SquareUser, Toolbox, Phone } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-
-const data = {
-  navMain: [
-    {
-      title: "Home",
-      url: "/",
-      icon: <House />,
-      isActive: true,
-    },
-    {
-      title: "About",
-      url: "/about",
-      icon: <SquareUser />,
-    },
-    {
-      title: "Skills",
-      url: "/skills",
-      icon: <Toolbox />,
-    },
-    {
-      title: "Contact",
-      url: "/contact",
-      icon: <Phone />,
-    },
-  ],
-};
+import { NavigationData } from "@/nav-config";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const isMobile = useIsMobile();
@@ -51,6 +25,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <img
                 style={{ filter: "invert(100%)" }}
                 src={"/logo.png"}
+                alt="Yaroslav Vasko Logo"
                 className="w-8"
               />
             </SidebarTrigger>
@@ -58,7 +33,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain items={NavigationData.navMain} />
       </SidebarContent>
       <SidebarFooter></SidebarFooter>
       <SidebarRail />

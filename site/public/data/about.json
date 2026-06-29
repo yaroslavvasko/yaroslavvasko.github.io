@@ -50,5 +50,10 @@
       "duration": "2012 - 2014",
       "description": "Specialization: Programming and data processing; Computer graphics and multimedia"
     }
-  ]
+  ],
+  "metaData": {
+    "path": "/about",
+    "title": "About",
+    "description": "Learn more about Yaroslav Vasko: experience, education, and certifications in software engineering and cloud architecture."
+  }
 }

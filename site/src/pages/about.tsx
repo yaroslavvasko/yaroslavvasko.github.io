@@ -6,11 +6,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useJsonFetch } from "@/hooks/useJsonFetch";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { getBreadcrumbSchema } from "@/lib/structured-data";
 import { FlaskConical, MapPinCheckInside, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import "./about.css";
+import type { PageMeta } from "@/types/seo";
+import { NavigationData } from "@/nav-config";
 
-type AboutData = {
+interface AboutData {
   description: string[];
   location: string;
   certifications: {
@@ -29,7 +33,8 @@ type AboutData = {
     duration: string;
     description: string;
   }[];
-};
+  metaData: PageMeta;
+}
 
 const getYearsSince = (year: number): number => {
   return new Date().getFullYear() - year;
@@ -38,6 +43,16 @@ const getYearsSince = (year: number): number => {
 export default function AboutPage() {
   const { data } = useJsonFetch<AboutData>("/data/about.json");
   const [yearsOfExperience] = useState<number | null>(getYearsSince(2018));
+
+  // Set page meta and structured data
+  usePageMeta({
+    title: data?.metaData?.title || "",
+    description: data?.metaData?.description || "",
+    path: data?.metaData?.path || "",
+    structuredData: getBreadcrumbSchema(
+      NavigationData.getPageConfig("about").breadcrumbs,
+    ),
+  });
 
   return (
     <div className="flex flex-col grow p-0 md:p-6">

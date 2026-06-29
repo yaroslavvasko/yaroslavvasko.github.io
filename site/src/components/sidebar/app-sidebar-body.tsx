@@ -19,6 +19,7 @@ export function AppSidebarBody({
             <img
               style={{ filter: "invert(100%)" }}
               src={"/logo.png"}
+              alt="Yaroslav Vasko Logo"
               className="w-8"
             />
           </SidebarTrigger>

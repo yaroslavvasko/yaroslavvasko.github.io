@@ -47,5 +47,10 @@
         "Unit Testing"
       ]
     }
-  ]
+  ],
+  "metaData": {
+    "path": "/skills",
+    "title": "Skills",
+    "description": "Technical skills and expertise: .NET, C#, Azure, React, microservices, distributed systems, and more."
+  }
 }

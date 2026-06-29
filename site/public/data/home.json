@@ -13,5 +13,10 @@
     "from Kraków, Poland — building software that works across borders.",
     "may your builds always pass and your users always stay.",
     "if this resonates — share it with someone who builds things too."
-  ]
+  ],
+  "metaData": {
+    "path": "/",
+    "title": "Home",
+    "description": "Yaroslav Vasko - Senior .NET Engineer with multiple years of experience building cloud-native applications and distributed systems"
+  }
 }
