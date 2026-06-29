@@ -1,0 +1,12 @@
+# Robots.txt for yaroslavvasko.dev
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+Disallow: 
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://yaroslavvasko.github.io/sitemap.xml
