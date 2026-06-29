@@ -14,7 +14,7 @@ export default function SkillsPage() {
   const { data } = useJsonFetch<SkillsData>("/data/skills.json");
 
   return (
-    <div className="flex flex-col grow">
+    <div className="flex flex-col grow p-0 md:p-6">
       <h1 className="text-6xl lg:text-8xl font-medium mt-6">
         Tech stack<span className="text-primary-2">.</span>
       </h1>

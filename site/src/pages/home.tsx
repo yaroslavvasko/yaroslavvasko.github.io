@@ -20,7 +20,7 @@ export default function HomePage() {
 
   return (
     <div className="squared-bg flex flex-col md:flex-row grow">
-      <div className="flex flex-col md:w-1/2 p-6">
+      <div className="flex flex-col md:w-1/2 p-0 md:p-6">
         <Badge variant="outline" className="text-primary">
           <BadgeCheck data-icon="inline-start" />
           SYS.STATUS: ONLINE
@@ -61,7 +61,7 @@ export default function HomePage() {
           </NavLink>
         </div>
       </div>
-      <div className="flex flex-col md:max-w-1/2 p-6 items-center justify-center my-6 md:my-0">
+      <div className="flex flex-col md:max-w-1/2 p-0 md:p-6 items-center justify-center my-6 md:my-0">
         <Card className="cyber-card h-80 p-6 bg-transparent backdrop-blur-xs font-mono">
           <CardHeader>
             <CardTitle className="font-mono font-light text-primary text-base">

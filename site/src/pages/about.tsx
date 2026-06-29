@@ -40,13 +40,13 @@ export default function AboutPage() {
   const [yearsOfExperience] = useState<number | null>(getYearsSince(2018));
 
   return (
-    <div className="flex flex-col grow">
+    <div className="flex flex-col grow p-0 md:p-6">
       <h1 className="text-6xl lg:text-8xl font-medium mt-6">
         About me<span className="text-primary-2">.</span>
       </h1>
 
-      <div className="flex flex-col md:flex-row grow">
-        <div className="flex flex-col md:w-1/3 p-6">
+      <div className="flex flex-col md:flex-row grow gap-6">
+        <div className="flex flex-col md:w-1/3">
           <Card className="cyber-card mt-2 p-6 bg-transparent backdrop-blur-xs font-mono">
             <CardHeader>
               <CardTitle className="font-mono font-light text-primary text-base">
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </CardContent>
           </Card>
         </div>
-        <div className="flex flex-col md:max-w-2/3 p-6">
+        <div className="flex flex-col md:max-w-2/3">
           {data?.description.map((paragraph, index) => (
             <p className="text-xl mt-2" key={index}>
               {paragraph}
@@ -92,7 +92,7 @@ export default function AboutPage() {
       <h1 className="text-6xl lg:text-8xl font-medium mt-6">
         Experience<span className="text-primary-2">.</span>
       </h1>
-      <div className="flex flex-col p-6">
+      <div className="flex flex-col p-4">
         {data?.experience.map((exp, index) => (
           <div key={index} className="experience-card mb-6">
             <Card className="cyber-card bg-transparent backdrop-blur-xs font-mono ">
