@@ -11,6 +11,7 @@ import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
 import HomePage from "./pages/home";
 import SkillsPage from "./pages/skills";
+import NotFound from "./pages/notfound";
 
 function App() {
   const location = useLocation();
@@ -47,6 +48,7 @@ function App() {
                 <Route path="about" element={<AboutPage />} />
                 <Route path="skills" element={<SkillsPage />} />
                 <Route path="contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
           </AppSidebarBody>
