@@ -1,0 +1,14 @@
+.experience-card::before {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--primary-2);
+  position: absolute;
+  content: "";
+  background-color: var(--background);
+  margin-left: calc(var(--spacing) * 14 * -1);
+}
+
+.experience-card {
+  padding-left: calc(var(--spacing) * 10);
+  border-left: 2px solid var(--primary-2);
+}

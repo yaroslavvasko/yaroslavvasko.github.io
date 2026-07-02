@@ -1,0 +1,61 @@
+.cyber-card:before {
+  top: 0;
+  left: 0;
+
+  border: 2px solid var(--primary);
+  border-bottom: none;
+  border-right: none;
+}
+
+.cyber-card:after {
+  right: 0;
+  bottom: 0;
+
+  border: 2px solid var(--primary);
+  border-top: none;
+  border-left: none;
+}
+
+.cyber-card:before,
+.cyber-card:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+.cyber-card {
+  cursor: pointer;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cyber-card:hover {
+  box-shadow:
+    inset 0 0 30px color-mix(in srgb, var(--primary) 10%, transparent),
+    0 0 30px color-mix(in srgb, var(--primary) 30%, transparent);
+  transform: translateY(-2px);
+  clip-path: polygon(0 0, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.cyber-card.streamline {
+  background: linear-gradient(
+    180deg,
+    transparent 0,
+    color-mix(in srgb, var(--primary) 15%, transparent) 20%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+  animation: streamline 3s linear infinite;
+}
+
+@keyframes streamline {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 200%;
+  }
+}
