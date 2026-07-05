@@ -1,4 +1,4 @@
-import { House, SquareUser, Toolbox, Phone } from "lucide-react";
+import { BookOpen, House, SquareUser, Toolbox, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
 export interface NavigationConfig {
@@ -47,6 +47,15 @@ export const NavigationData: NavigationConfig = {
       breadcrumbs: [
         homeBreadCrubm,
         { name: "Skills", item: `${import.meta.env.VITE_SITE_URL}/skills` },
+      ],
+    },
+    {
+      title: "Blog",
+      url: "/blog",
+      icon: <BookOpen />,
+      breadcrumbs: [
+        homeBreadCrubm,
+        { name: "Blog", item: `${import.meta.env.VITE_SITE_URL}/blog` },
       ],
     },
     {

@@ -20,8 +20,7 @@ export function usePageMeta(options: PageMetaOptions) {
       descTag.setAttribute("content", options.description);
     }
 
-    // Update canonical URL
-    const siteUrl = "https://yaroslavvasko.github.io";
+    const siteUrl = import.meta.env.VITE_SITE_URL;
     const canonicalPath = options.path || "/";
     const canonicalUrl = `${siteUrl}${canonicalPath}`;
 

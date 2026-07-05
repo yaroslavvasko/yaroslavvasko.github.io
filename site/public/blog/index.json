@@ -1,0 +1,12 @@
+{
+  "blogPosts": [
+    {
+      "slug": "first-article",
+      "title": "First Article",
+      "description": "Cat 1 Cat 2: A sample article to demonstrate markdown-based content.",
+      "date": "2026-07-02",
+      "categories": ["Cat 1", "Cat 2"],
+      "tags": ["example", "tutorial"]
+    }
+  ]
+}

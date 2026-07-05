@@ -7,11 +7,14 @@ import { AppSidebarBody } from "./components/sidebar/app-sidebar-body";
 import { ThemeProvider } from "./components/theme-provider";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { TooltipProvider } from "./components/ui/tooltip";
+import { ErrorBoundary } from "react-error-boundary";
 import AboutPage from "./pages/about";
+import BlogPost from "./pages/blogPost";
 import ContactPage from "./pages/contact";
 import HomePage from "./pages/home";
 import SkillsPage from "./pages/skills";
 import NotFound from "./pages/notfound";
+import BlogPage from "./pages/blog";
 
 function App() {
   const location = useLocation();
@@ -42,14 +45,24 @@ function App() {
           </nav>
 
           <AppSidebarBody>
-            <main id="main-content">
-              <Routes>
-                <Route index element={<HomePage />} />
-                <Route path="about" element={<AboutPage />} />
-                <Route path="skills" element={<SkillsPage />} />
-                <Route path="contact" element={<ContactPage />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+            <main id="main-content" className="flex grow">
+              <ErrorBoundary
+                fallbackRender={() => (
+                  <div role="alert">
+                    <p>Something went wrong</p>
+                  </div>
+                )}
+              >
+                <Routes>
+                  <Route index element={<HomePage />} />
+                  <Route path="about" element={<AboutPage />} />
+                  <Route path="skills" element={<SkillsPage />} />
+                  <Route path="blog" element={<BlogPage />} />
+                  <Route path="blog/:slug" element={<BlogPost />} />
+                  <Route path="contact" element={<ContactPage />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </ErrorBoundary>
             </main>
           </AppSidebarBody>
         </SidebarProvider>
