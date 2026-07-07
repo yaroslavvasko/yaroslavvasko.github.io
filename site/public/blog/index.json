@@ -1,12 +1,12 @@
 {
   "blogPosts": [
     {
-      "slug": "first-article",
-      "title": "First Article",
-      "description": "Cat 1 Cat 2: A sample article to demonstrate markdown-based content.",
-      "date": "2026-07-02",
-      "categories": ["Cat 1", "Cat 2"],
-      "tags": ["example", "tutorial"]
+      "slug": "rag-retrieval-augmented-generation",
+      "title": "(RAG) Retrieval-Augmented Generation",
+      "description": "RAG (Retrieval-Augmented Generation) is a technique that combines information retrieval with text generation to create more accurate and informative responses.",
+      "date": "2026-07-06",
+      "categories": ["AI"],
+      "tags": ["rag", "retrieval", "generation", "ai"]
     }
   ]
 }
