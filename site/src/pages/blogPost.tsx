@@ -62,32 +62,36 @@ export default function BlogPost() {
       )}
 
       {data && (
-        <div className="article-markdown">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              code(props) {
-                const { children, className } = props;
-                const match = /language-(\w+)/.exec(className || "");
-                return match ? (
-                  <SyntaxHighlighter
-                    PreTag="div"
-                    language={match[1]}
-                    style={vscDarkPlus}
-                    showLineNumbers={true}
-                    wrapLongLines={true}
-                    className="markdown-code-block"
-                  >
-                    {String(children).replace(/\n$/, "")}
-                  </SyntaxHighlighter>
-                ) : (
-                  <code className="markdown-code-block">{children}</code>
-                );
-              },
-            }}
-          >
-            {data}
-          </ReactMarkdown>
+        <div className="grid grid-cols-1 xl:grid-cols-12 mt-6">
+          <div className="grid grid-cols-1 xl:col-span-8 xl:col-start-3">
+            <div className="article-markdown">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  code(props) {
+                    const { children, className } = props;
+                    const match = /language-(\w+)/.exec(className || "");
+                    return match ? (
+                      <SyntaxHighlighter
+                        PreTag="div"
+                        language={match[1]}
+                        style={vscDarkPlus}
+                        showLineNumbers={true}
+                        wrapLongLines={true}
+                        className="markdown-code-block"
+                      >
+                        {String(children).replace(/\n$/, "")}
+                      </SyntaxHighlighter>
+                    ) : (
+                      <code className="markdown-code-block">{children}</code>
+                    );
+                  },
+                }}
+              >
+                {data}
+              </ReactMarkdown>
+            </div>
+          </div>
         </div>
       )}
     </div>

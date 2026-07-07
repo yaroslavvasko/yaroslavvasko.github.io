@@ -181,7 +181,7 @@
   }
 
   .article-markdown p {
-    @apply leading-7;
+    @apply text-xl;
   }
 
   .article-markdown a {
