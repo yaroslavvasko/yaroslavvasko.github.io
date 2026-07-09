@@ -7,6 +7,7 @@ import { NavigationData } from "@/nav-config";
 import { BlogPagination } from "@/components/blog/blogPagination";
 import BlogPostListing, { type BlogPost } from "@/components/blog/postListing";
 import BlogFilters from "@/components/blog/blogFilters";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export interface BlogIndexData {
   blogPosts: BlogPost[];
@@ -123,19 +124,31 @@ export default function BlogPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-12 md:grow gap-8 mt-6">
         <aside className="md:col-span-2 md:order-last">
-          <BlogFilters
-            categories={allCategories}
-            selectedCategories={selectedCategories}
-            handleCategoryChange={handleCategoryChange}
-            tags={allTags}
-            selectedTags={selectedTags}
-            handleTagChange={handleTagChange}
-          />
+          {loading && !error ? (
+            <div className="flex flex-col gap-2">
+              <Skeleton className="h-4 w-3/4" />
+              <Skeleton className="h-4 w-3/4" />
+            </div>
+          ) : (
+            <BlogFilters
+              categories={allCategories}
+              selectedCategories={selectedCategories}
+              handleCategoryChange={handleCategoryChange}
+              tags={allTags}
+              selectedTags={selectedTags}
+              handleTagChange={handleTagChange}
+            />
+          )}
         </aside>
 
         <div className="md:col-span-10">
           <div className="flex flex-col grow h-full justify-between">
-            {loading && <p className="mt-6 text-sm">Loading articles...</p>}
+            {loading && !error && (
+              <div className="flex flex-col gap-2">
+                <Skeleton className="h-4 w-3/4" />
+                <Skeleton className="h-4 w-3/4" />
+              </div>
+            )}
             {error && (
               <p className="mt-6 text-sm text-destructive">
                 Error loading articles: {error.message}

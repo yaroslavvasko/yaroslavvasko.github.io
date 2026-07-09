@@ -180,8 +180,16 @@
     @apply text-2xl;
   }
 
-  .article-markdown p {
+  .article-markdown h3 {
     @apply text-xl;
+  }
+
+  .article-markdown h4 {
+    @apply text-lg;
+  }
+
+  .article-markdown p {
+    @apply text-lg;
   }
 
   .article-markdown a {

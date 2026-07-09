@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -11,16 +10,27 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import type { BlogIndexData } from "./blog";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useMemo } from "react";
 
 export default function BlogPost() {
   const params = useParams();
   const slug = params.slug || "";
-  const { data, loading, error } = useTextFetch(`/blog/${slug}.md`);
 
-  const { data: blogData } = useJsonFetch<BlogIndexData>("/blog/index.json");
+  const {
+    data: postMetaData,
+    loading: metaLoading,
+    error: metaError,
+  } = useJsonFetch<BlogIndexData>("/blog/index.json");
+  const {
+    data: postData,
+    loading: postLoading,
+    error: postError,
+  } = useTextFetch(`/blog/${slug}.md`);
+
   const postMeta = useMemo(() => {
-    return blogData?.blogPosts.find((post) => post.slug === slug);
-  }, [blogData?.blogPosts, slug]);
+    return postMetaData?.blogPosts.find((post) => post.slug === slug);
+  }, [postMetaData?.blogPosts, slug]);
 
   usePageMeta({
     title: postMeta?.title || "",
@@ -33,35 +43,54 @@ export default function BlogPost() {
 
   return (
     <div className="flex flex-col grow p-0 md:p-6">
-      <h1 className="text-6xl lg:text-8xl font-medium mt-6">
-        {postMeta?.title}
-        <span className="text-primary-2">.</span>
-      </h1>
+      {metaLoading && !metaError && (
+        <div className="flex flex-col gap-2">
+          <Skeleton className="h-4 w-3/4" />
+          <Skeleton className="h-4 w-2/4" />
+        </div>
+      )}
 
-      <div className="flex flex-col gap-2 mb-6">
-        {postMeta?.date && (
-          <p className="text-xs text-muted-foreground">
-            Published {postMeta.date}
-          </p>
-        )}
-      </div>
+      {postMeta && (
+        <>
+          <h1 className="text-6xl lg:text-8xl font-medium mt-6">
+            {postMeta.title}
+            <span className="text-primary-2">.</span>
+          </h1>
+          <div className="flex flex-col gap-2 mb-6">
+            {postMeta?.date && (
+              <p className="text-xs text-muted-foreground">
+                Published {postMeta.date}
+              </p>
+            )}
+          </div>
 
-      <div className="flex flex-wrap gap-2 mb-6">
-        {postMeta?.tags?.map((tag) => (
-          <Badge variant="default" key={tag}>
-            #{tag}
-          </Badge>
-        ))}
-      </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {postMeta?.tags?.map((tag) => (
+              <Badge variant="default" key={tag}>
+                #{tag}
+              </Badge>
+            ))}
+          </div>
+        </>
+      )}
 
-      {loading && <p className="text-sm">Loading article...</p>}
-      {error && (
+      {postLoading && !postError && (
+        <div className="grid grid-cols-1 xl:grid-cols-12 mt-6">
+          <div className="grid grid-cols-1 xl:col-span-8 xl:col-start-3 gap-2">
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+          </div>
+        </div>
+      )}
+
+      {postError && (
         <p className="text-sm text-destructive">
-          Error loading article: {error.message}
+          Error loading article: {postError.message}
         </p>
       )}
 
-      {data && (
+      {postData && (
         <div className="grid grid-cols-1 xl:grid-cols-12 mt-6">
           <div className="grid grid-cols-1 xl:col-span-8 xl:col-start-3">
             <div className="article-markdown">
@@ -88,7 +117,7 @@ export default function BlogPost() {
                   },
                 }}
               >
-                {data}
+                {postData}
               </ReactMarkdown>
             </div>
           </div>
