@@ -32,6 +32,7 @@ export function NavMain({ items }: NavMainProps) {
               <SidebarMenuButton
                 tooltip={item.title}
                 className="cursor-pointer"
+                size={isMobile ? "lg" : "default"}
               >
                 {item.icon}
                 <span>{item.title}</span>
