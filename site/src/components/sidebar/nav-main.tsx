@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 import {
   SidebarGroup,
   SidebarMenu,
@@ -5,7 +7,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { useSidebar } from "@/hooks/useSidebar";
-import { NavLink } from "react-router";
 
 export type NavMainProps = {
   items: {

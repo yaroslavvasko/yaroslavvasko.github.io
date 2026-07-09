@@ -1,20 +1,22 @@
-import { Route, Routes, useLocation } from "react-router";
-import { useEffect } from "react";
-import ReactGA from "react-ga4";
 import "./App.css";
+
+import { useEffect } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import ReactGA from "react-ga4";
+import { Route, Routes, useLocation } from "react-router";
+
 import { AppSidebar } from "./components/sidebar/app-sidebar";
 import { AppSidebarBody } from "./components/sidebar/app-sidebar-body";
 import { ThemeProvider } from "./components/theme-provider";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { TooltipProvider } from "./components/ui/tooltip";
-import { ErrorBoundary } from "react-error-boundary";
 import AboutPage from "./pages/about";
+import BlogPage from "./pages/blog";
 import BlogPost from "./pages/blogPost";
 import ContactPage from "./pages/contact";
 import HomePage from "./pages/home";
-import SkillsPage from "./pages/skills";
 import NotFound from "./pages/notfound";
-import BlogPage from "./pages/blog";
+import SkillsPage from "./pages/skills";
 
 function App() {
   const location = useLocation();

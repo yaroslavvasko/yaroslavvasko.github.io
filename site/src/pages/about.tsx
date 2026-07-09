@@ -1,3 +1,8 @@
+import "./about.css";
+
+import { FlaskConical, MapPinCheckInside, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+
 import {
   Card,
   CardContent,
@@ -8,11 +13,8 @@ import {
 import { useJsonFetch } from "@/hooks/useJsonFetch";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
-import { FlaskConical, MapPinCheckInside, ShieldCheck } from "lucide-react";
-import { useState } from "react";
-import "./about.css";
-import type { PageMeta } from "@/types/seo";
 import { NavigationData } from "@/nav-config";
+import type { PageMeta } from "@/types/seo";
 
 interface AboutData {
   description: string[];

@@ -1,4 +1,4 @@
-import { BookOpen, House, SquareUser, Toolbox, Phone } from "lucide-react";
+import { BookOpen, House, Phone, SquareUser, Toolbox } from "lucide-react";
 import type { ReactNode } from "react";
 
 export interface NavigationConfig {

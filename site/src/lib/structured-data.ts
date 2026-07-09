@@ -1,4 +1,4 @@
-import type { PersonSchema, BreadcrumbSchema } from "@/types/seo";
+import type { BreadcrumbSchema,PersonSchema } from "@/types/seo";
 
 export function getPersonSchema(): PersonSchema {
   return {

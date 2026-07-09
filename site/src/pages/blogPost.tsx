@@ -1,17 +1,19 @@
-import { useParams } from "react-router";
+import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { useTextFetch } from "@/hooks/useTextFetch";
-import { usePageMeta } from "@/hooks/usePageMeta";
-import { getBreadcrumbSchema } from "@/lib/structured-data";
-import { NavigationData } from "@/nav-config";
-import { useJsonFetch } from "@/hooks/useJsonFetch";
+import { useParams } from "react-router";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import type { BlogIndexData } from "./blog";
+import remarkGfm from "remark-gfm";
+
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useMemo } from "react";
+import { useJsonFetch } from "@/hooks/useJsonFetch";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { useTextFetch } from "@/hooks/useTextFetch";
+import { getBreadcrumbSchema } from "@/lib/structured-data";
+import { NavigationData } from "@/nav-config";
+
+import type { BlogIndexData } from "./blog";
 
 export default function BlogPost() {
   const params = useParams();

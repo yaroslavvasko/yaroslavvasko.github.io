@@ -1,13 +1,14 @@
-import { useState, useMemo } from "react";
+import { useMemo,useState } from "react";
+
+import BlogFilters from "@/components/blog/blogFilters";
+import { BlogPagination } from "@/components/blog/blogPagination";
+import BlogPostListing, { type BlogPost } from "@/components/blog/postListing";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useJsonFetch } from "@/hooks/useJsonFetch";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
-import type { PageMeta } from "@/types/seo";
 import { NavigationData } from "@/nav-config";
-import { BlogPagination } from "@/components/blog/blogPagination";
-import BlogPostListing, { type BlogPost } from "@/components/blog/postListing";
-import BlogFilters from "@/components/blog/blogFilters";
-import { Skeleton } from "@/components/ui/skeleton";
+import type { PageMeta } from "@/types/seo";
 
 export interface BlogIndexData {
   blogPosts: BlogPost[];

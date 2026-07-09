@@ -1,6 +1,8 @@
-import { useIsMobile } from "@/hooks/use-mobile";
-import { SidebarInset, SidebarTrigger } from "../ui/sidebar";
 import { Menu } from "lucide-react";
+
+import { useIsMobile } from "@/hooks/use-mobile";
+
+import { SidebarInset, SidebarTrigger } from "../ui/sidebar";
 
 export function AppSidebarBody({
   children,

@@ -1,20 +1,21 @@
-import { NavLink } from "react-router";
-import TextTransformer from "@/components/text-transformation/text-transformer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import "./home.css";
+
 import { BadgeCheck } from "lucide-react";
+import { NavLink } from "react-router";
+
+import TextTransformer from "@/components/text-transformation/text-transformer";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useJsonFetch } from "@/hooks/useJsonFetch";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import {
+  getBreadcrumbSchema,
   getPersonSchema,
   getProfessionalServiceSchema,
-  getBreadcrumbSchema,
 } from "@/lib/structured-data";
-
-import "./home.css";
-import type { PageMeta } from "@/types/seo";
 import { NavigationData } from "@/nav-config";
+import type { PageMeta } from "@/types/seo";
 
 interface MainData {
   heading: string[];

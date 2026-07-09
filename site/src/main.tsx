@@ -1,10 +1,12 @@
+import "./index.css";
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { HelmetProvider } from "react-helmet-async";
 import ReactGA from "react-ga4";
-import "./index.css";
-import App from "./App.tsx";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router";
+
+import App from "./App.tsx";
 
 // Initialize Google Analytics
 // Replace with your actual Google Analytics ID
